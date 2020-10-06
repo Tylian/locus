@@ -29,6 +29,8 @@ describe("raw file handling", () => {
       const locus = createLocus();
       const file = await locus.getFile('exd/root.exl');
       await file.saveFile("./root.exl");
+
+      // test to make sure the file actually saved
       await fs.access("./root.exl", fsConstants.F_OK);
     });
   });
